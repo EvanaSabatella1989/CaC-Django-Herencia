@@ -1,9 +1,10 @@
+from Ejercicio6 import Persona, persona1
 # Crea una clase llamada Cuenta que tendrá los siguientes atributos: titular (que es una persona) y cantidad (puede tener decimales). El titular será obligatorio y la cantidad es 
 # opcional. Crear los siguientes métodos para la clase:
 
 class Cuenta():
     # • Un constructor, donde los datos pueden estar vacíos.
-    def __init__(self,titular,cantidad=0):
+    def __init__(self,titular:Persona,cantidad=0):
         self.titular=titular
         self.__cantidad=cantidad
 
@@ -23,7 +24,7 @@ class Cuenta():
 
     # • mostrar(): Muestra los datos de la cuenta.   
     def mostrar(self):
-        return "Cuenta\n"+" Titular: "+ self.titular +" - Cantidad: "+str(self.cantidad)
+        return "Cuenta\n"+" Titular: "+ self.titular.mostrar() +" - Cantidad: "+str(self.cantidad)
 
     # • ingresar(cantidad): se ingresa una cantidad a la cuenta, si la cantidad introducida es 
     # negativa, no se hará nada.
@@ -37,10 +38,10 @@ class Cuenta():
         if cantidad > 0:
             self.__cantidad = self.__cantidad - cantidad
 
-# nueva = Cuenta("Daniela")
-# print(nueva.mostrar())
-# nueva.ingresar(1000)
-# print(nueva.mostrar())
+nueva = Cuenta(persona1)
+print(nueva.mostrar())
+nueva.ingresar(1000)
+print(nueva.mostrar())
 
 
     

@@ -54,5 +54,7 @@ class Persona():
    def es_mayor_de_edad(self):
         return self.edad>=18
 
-# persona1 = Persona("Eva",33,"12154546")
+persona1 = Persona("Eva",33,"12154546")
 # print(persona1.mostrar())
+
+personaJoven = Persona("Daniela", 32, "54564156")

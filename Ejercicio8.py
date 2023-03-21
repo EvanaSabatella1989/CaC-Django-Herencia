@@ -1,4 +1,5 @@
 from Ejercicio7 import Cuenta
+from Ejercicio6 import Persona, personaJoven
 # Vamos a definir ahora una “Cuenta Joven”, para ello vamos a crear una nueva clase 
 # CuantaJoven que deriva de la clase creada en el punto 7. Cuando se crea esta nueva clase, 
 # además del titular y la cantidad se debe guardar una bonificación que estará expresada en 
@@ -22,7 +23,7 @@ class CuentaJoven(Cuenta):
     # • El método mostrar() debe devolver el mensaje de “Cuenta Joven” y la bonificación de la 
     # cuenta
     def mostrar(self):
-        return "Cuenta Joven\n"+"Titular:"+ self.titular +" ,Cantidad:"+str(self.cantidad)+ " ,Bonificación:"+str(self.bonificacion)+"%"
+        return "Cuenta Joven\n"+"Titular:"+ self.titular.mostrar() +" ,Cantidad:"+str(self.cantidad)+ " ,Bonificación:"+str(self.bonificacion)+"%"
    
     # • En esta ocasión los titulares de este tipo de cuenta tienen que ser mayor de edad, por lo 
     # tanto hay que crear un método es_titular_valido() que devuelve verdadero si el titular es 
@@ -37,5 +38,5 @@ class CuentaJoven(Cuenta):
         elif cantidad > 0:
             super().retirar(cantidad)
 
-# nuevaJoven = CuentaJoven("Evana",545,2)
-# print(nuevaJoven.mostrar())
+nuevaJoven = CuentaJoven(personaJoven,545,2)
+print(nuevaJoven.mostrar())
